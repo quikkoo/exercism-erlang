@@ -1,0 +1,11 @@
+*.o
+*.beam
+*.plt
+*.lock
+.eunit
+.rebar
+erl_crash.dump
+_build/
+ebin/
+deps/
+

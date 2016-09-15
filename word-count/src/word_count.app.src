@@ -1,0 +1,12 @@
+{application, word_count, [
+  {description, "An OTP library"},
+  {vsn, "1.0.0"},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib
+  ]},
+  {env,[]},
+  {modules, []}
+]}.
+
