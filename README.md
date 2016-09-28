@@ -3,6 +3,10 @@ Exercism Erlang
 
 [![GPLv3 License](http://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/copyleft/gpl.html)
 
+[![CircleCI](https://circleci.com/gh/quikkoo/exercism-erlang.svg?style=svg)](https://circleci.com/gh/quikkoo/exercism-erlang)
+[![Build Status](https://snap-ci.com/quikkoo/exercism-erlang/branch/master/build_image)](https://snap-ci.com/quikkoo/exercism-erlang/branch/master)
+[![Codeship Status for quikkoo/exercism-erlang](https://app.codeship.com/projects/5396b3e0-6727-0134-674c-4a7e7d01af25/status?branch=master)](https://app.codeship.com/projects/176129)
+
 Erlang exercises from [exercism.io](http://exercism.io/)
 
 This is a multi module project for all exercises in erlang language,
