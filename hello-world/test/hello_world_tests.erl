@@ -8,9 +8,12 @@ without_name_test() ->
   ?assertEqual("Hello, World!", hello_world:greet()).
 
 with_empty_name_test() ->
-  ?assertEqual("Hello, !", hello_world:greet("")).
+  ?assertEqual("Hello, World!", hello_world:greet("")).
 
-with_name_alice_test() ->
-  ?assertEqual("Hello, Alice!", hello_world:greet("Alice")).
+with_name_erlang_test() ->
+  ?assertEqual("Hello, Erlang!", hello_world:greet("Erlang")).
+
+with_name_exercism_test() ->
+  ?assertEqual("Hello, Exercism!", hello_world:greet("Exercism")).
 
 -endif.

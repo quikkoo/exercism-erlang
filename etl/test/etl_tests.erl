@@ -4,27 +4,32 @@
 
 -include_lib("eunit/include/eunit.hrl").
 
-transform_one_value_test() ->
-  Actual   = #{ 1 => [ "A" ] },
-  Expected = #{ "a" => 1 },
+should_transform_one_value_test() ->
+  Actual   = #{ 1 => [ "WORLD" ] },
+  Expected = #{ "world" => 1 },
   ?assertEqual(Expected, etl:transform(Actual)).
 
-transform_more_values_test() ->
-  Actual   = #{ 1 => [ "A", "E", "I", "O", "U" ] },
-  Expected = #{ "a" => 1, "e" => 1, "i" => 1, "o" => 1, "u" => 1 },
-  ?assertEqual(Expected, etl:transform(Actual)).
-
-transform_more_keys_test() ->
-  Actual   = #{
-    1 => [ "A", "E" ],
-    4 => [ "B" ] },
+should_transform_more_values_test() ->
+  Actual   = #{ 1 => [ "WORLD", "GSCHOOLERS" ] },
   Expected = #{
-    "a" => 1,
-    "b" => 4,
-    "e" => 1 },
+    "world" => 1,
+    "gschoolers" => 1
+  },
   ?assertEqual(Expected, etl:transform(Actual)).
 
-transform_full_dataset_test() ->
+should_transform_more_keys_test() ->
+  Actual   = #{
+    1 => [ "APPLE", "ARTICHOKE" ],
+    2 => [ "BOAT", "BALLERINA" ] },
+  Expected = #{
+    "apple" => 1,
+    "artichoke" => 1,
+    "boat" => 2,
+    "ballerina" => 2
+  },
+  ?assertEqual(Expected, etl:transform(Actual)).
+
+should_transform_full_dataset_test() ->
   Actual = #{
     1 =>  [ "A", "E", "I", "O", "U", "L", "N", "R", "S", "T" ],
     2 =>  [ "D", "G" ],
@@ -34,12 +39,13 @@ transform_full_dataset_test() ->
     8 =>  [ "J", "X" ],
     10 => [ "Q", "Z" ] },
   Expected = #{
-    "a" => 1, "b" => 3,  "c" => 3, "d" => 2, "e" => 1,
-    "f" => 4, "g" => 2,  "h" => 4, "i" => 1, "j" => 8,
-    "k" => 5, "l" => 1,  "m" => 3, "n" => 1, "o" => 1,
+    "a" => 1, "b" =>  3, "c" => 3, "d" => 2, "e" => 1,
+    "f" => 4, "g" =>  2, "h" => 4, "i" => 1, "j" => 8,
+    "k" => 5, "l" =>  1, "m" => 3, "n" => 1, "o" => 1,
     "p" => 3, "q" => 10, "r" => 1, "s" => 1, "t" => 1,
-    "u" => 1, "v" => 4,  "w" => 4, "x" => 8, "y" => 4,
-    "z" => 10 },
+    "u" => 1, "v" =>  4, "w" => 4, "x" => 8, "y" => 4,
+    "z" => 10
+  },
   ?assertEqual(Expected, etl:transform(Actual)).
 
 -endif.

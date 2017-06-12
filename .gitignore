@@ -1,11 +1,12 @@
 *.o
 *.beam
-*.plt
+erl_crash.dump
+
 *.lock
+*.plt
 .eunit
 .rebar
-erl_crash.dump
 _build/
+deps
 ebin/
-deps/
 

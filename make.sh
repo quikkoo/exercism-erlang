@@ -1,6 +1,4 @@
-#!/bin/sh
-
-set -e
+#!/bin/sh -e
 
 MODULES="      \
   anagram      \
@@ -9,6 +7,8 @@ MODULES="      \
   hello-world  \
   word-count   \
 "
+
+TASK=${1:-"all"}
 
 task_check() {
   rebar3 dialyzer
@@ -28,13 +28,6 @@ task_all() {
 task_clean() {
   rm -rf _build *.lock
 }
-
-if [ -z $1 ]
-then
-  TASK=all
-else
-  TASK=$1
-fi
 
 for MODULE in $MODULES
 do

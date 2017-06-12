@@ -15,7 +15,7 @@ match(Question, [ { Name, Pattern } | List ]) ->
   end.
 
 hey(Question) ->
-  Fine = regex(fine, "^[\\s\\v\\x{00A0}\\x{2002}]*$"),
+  Fine = regex(fine, "^[\\s\\v\\x00A0\\x2002]*$"),
   Whoa = regex(whoa, "^[^\\p{Ll}]*[A-Z][^\\p{Ll}]*$"),
   Sure = regex(sure, "^.*\\?[\\s\\v]*$"),
 
